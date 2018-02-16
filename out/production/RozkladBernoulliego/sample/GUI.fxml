@@ -25,7 +25,7 @@
    <children>
       <Pane prefHeight="500.0" prefWidth="1000.0" GridPane.columnIndex="1">
          <children>
-            <BarChart fx:id="chartRozklad" layoutX="-10.0" legendVisible="false" prefHeight="365.0" prefWidth="465.0" title="Funkcja rozkładu">
+            <BarChart fx:id="chartRozklad" layoutX="-10.0" prefHeight="365.0" prefWidth="465.0" title="Funkcja rozkładu">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>

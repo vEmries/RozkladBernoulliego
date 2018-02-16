@@ -26,10 +26,15 @@ public class Controller {
         chartDystrybuanta.getData().clear();
 
         XYChart.Series rozkladFunkcji = modelMat.wykresRozkladuFunkcji(n, p);
-        chartRozklad.getData().add(rozkladFunkcji);
+//        chartRozklad.getData().add(rozkladFunkcji);
+
+        XYChart.Series rozkladProbyLosowej = modelMat.wykresProbyLosowej(n, p);
+//        chartRozklad.getData().add(rozkladProbyLosowej);
+        chartRozklad.getData().addAll(rozkladFunkcji, rozkladProbyLosowej);
 
         XYChart.Series rozkladDystrybuanty = modelMat.wykresDystrybuanty(n, p);
         chartDystrybuanta.getData().add(rozkladDystrybuanty);
+
     }
 
     @FXML
