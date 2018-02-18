@@ -47,6 +47,7 @@ public class Controller {
 
         textFieldLiczbaW.setText("40");
         textFieldPrawdopodobienstwoW.setText("0.5");
+        textFieldIloscLosowan.setText("10000");
         textFieldWygenerowanaLiczba.clear();
     }
 
