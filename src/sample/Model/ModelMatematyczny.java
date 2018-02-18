@@ -37,8 +37,8 @@ public class ModelMatematyczny {
 
     public XYChart.Series wykresProbyLosowej(Integer n, Double p, Integer N) {
         XYChart.Series rozkladProbyLosowej = new XYChart.Series();
-        double[] a = new double[n + 1];
-        double[] y = new double[n + 1];
+        double[] a = new double[n];
+        double[] y = new double[n];
         double x;
         double yy;
 
@@ -67,7 +67,7 @@ public class ModelMatematyczny {
 
         for (int i = 0; i < n; i++) {
             yy = y[i] / N;
-            rozkladProbyLosowej.getData().add(new XYChart.Data<String, Double>(String.valueOf(a[i + 1]), yy));
+            rozkladProbyLosowej.getData().add(new XYChart.Data<String, Double>(String.valueOf(a[i] + 1), yy));
         }
 
         return rozkladProbyLosowej;
