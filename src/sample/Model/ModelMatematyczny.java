@@ -37,12 +37,12 @@ public class ModelMatematyczny {
 
     public XYChart.Series wykresProbyLosowej(Integer n, Double p, Integer N) {
         XYChart.Series rozkladProbyLosowej = new XYChart.Series();
-        double[] a = new double[n];
-        double[] y = new double[n];
+        double[] a = new double[n + 1];
+        double[] y = new double[n + 1];
         double x;
         double yy;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             a[i] = i;
             y[i] = 0;
         }
@@ -50,24 +50,27 @@ public class ModelMatematyczny {
         for (int i = 0; i < N; i++) {
             x = generujLosowaLiczbe(n, p);
 
-            if (x < a[0]) {
+            if (x == a[0]) {
                 y[0]++;
             }
 
             for (int j = 0; j < n - 1; j++) {
                 if (x > a[j] && x <= a[j + 1]) {
-                    y[j]++;
+                    y[j + 1]++;
                 }
             }
 
-            if (x > a[n - 1]) {
-                y[n - 1]++;
+            if (x >= a[n]) {
+                y[n]++;
             }
         }
 
-        for (int i = 0; i < n; i++) {
+        System.out.println(a[0]);
+        System.out.println(y[1]);
+
+        for (int i = 0; i <= n; i++) {
             yy = y[i] / N;
-            rozkladProbyLosowej.getData().add(new XYChart.Data<String, Double>(String.valueOf(a[i] + 1), yy));
+            rozkladProbyLosowej.getData().add(new XYChart.Data<String, Double>(String.valueOf(a[i]), yy));
         }
 
         return rozkladProbyLosowej;
