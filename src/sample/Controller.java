@@ -59,5 +59,4 @@ public class Controller {
         Integer x = modelMat.generujLosowaLiczbe(n, p);
         textFieldWygenerowanaLiczba.setText(x.toString());
     }
-
 }
